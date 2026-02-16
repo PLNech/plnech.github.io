@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 370" font-family="Inter,Helvetica Neue,sans-serif">
+<rect width="100%" height="100%" fill="white"/>
+<text x="150" y="51" text-anchor="end" font-size="13" fill="#333">Relevance</text>
+<rect x="160" y="30" width="500" height="32" rx="4" fill="#f0f0f0"/>
+<rect x="160" y="30" width="483.3" height="32" rx="4" fill="#51cf66"/>
+<text x="651.3" y="51" font-size="13" font-weight="bold" fill="#333">96.7%</text>
+<text x="150" y="91" text-anchor="end" font-size="13" fill="#333">Faithfulness</text>
+<rect x="160" y="70" width="500" height="32" rx="4" fill="#f0f0f0"/>
+<rect x="160" y="70" width="451.4" height="32" rx="4" fill="#51cf66"/>
+<text x="619.4" y="91" font-size="13" font-weight="bold" fill="#333">90.3%</text>
+<text x="150" y="131" text-anchor="end" font-size="13" fill="#333">Context Coverage</text>
+<rect x="160" y="110" width="500" height="32" rx="4" fill="#f0f0f0"/>
+<rect x="160" y="110" width="441.1" height="32" rx="4" fill="#51cf66"/>
+<text x="609.1" y="131" font-size="13" font-weight="bold" fill="#333">88.2%</text>
+<text x="150" y="171" text-anchor="end" font-size="13" fill="#333">Safety</text>
+<rect x="160" y="150" width="500" height="32" rx="4" fill="#f0f0f0"/>
+<rect x="160" y="150" width="409.0" height="32" rx="4" fill="#69db7c"/>
+<text x="577.0" y="171" font-size="13" font-weight="bold" fill="#333">81.8%</text>
+<text x="150" y="211" text-anchor="end" font-size="13" fill="#333">Compliance</text>
+<rect x="160" y="190" width="500" height="32" rx="4" fill="#f0f0f0"/>
+<rect x="160" y="190" width="345.5" height="32" rx="4" fill="#ffd43b"/>
+<text x="513.5" y="211" font-size="13" font-weight="bold" fill="#333">69.1%</text>
+<text x="150" y="251" text-anchor="end" font-size="13" fill="#333">Tool Correctness</text>
+<rect x="160" y="230" width="500" height="32" rx="4" fill="#f0f0f0"/>
+<rect x="160" y="230" width="264.4" height="32" rx="4" fill="#ff8787"/>
+<text x="432.4" y="251" font-size="13" font-weight="bold" fill="#333">52.9%</text>
+<text x="150" y="291" text-anchor="end" font-size="13" fill="#333">Disambiguation</text>
+<rect x="160" y="270" width="500" height="32" rx="4" fill="#f0f0f0"/>
+<rect x="160" y="270" width="111.1" height="32" rx="4" fill="#ff6b6b"/>
+<text x="279.1" y="291" font-size="13" font-weight="bold" fill="#333">22.2%</text>
+<text x="150" y="331" text-anchor="end" font-size="13" fill="#333">Language</text>
+<rect x="160" y="310" width="500" height="32" rx="4" fill="#f0f0f0"/>
+<rect x="160" y="310" width="106.9" height="32" rx="4" fill="#ff6b6b"/>
+<text x="274.9" y="331" font-size="13" font-weight="bold" fill="#333">21.4%</text>
+</svg>
