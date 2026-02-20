@@ -1,0 +1,20 @@
+User-agent: *
+Disallow: /talks/agentic_evals/
+
+User-agent: GPTBot
+Disallow: /talks/agentic_evals/
+
+User-agent: ChatGPT-User
+Disallow: /talks/agentic_evals/
+
+User-agent: Google-Extended
+Disallow: /talks/agentic_evals/
+
+User-agent: anthropic-ai
+Disallow: /talks/agentic_evals/
+
+User-agent: CCBot
+Disallow: /talks/agentic_evals/
+
+User-agent: ClaudeBot
+Disallow: /talks/agentic_evals/
