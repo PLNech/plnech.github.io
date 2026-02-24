@@ -56,6 +56,7 @@
     scrollbar-width: none;
   }
   .nav-inner::-webkit-scrollbar { display: none; }
+  .nav-inner { -webkit-overflow-scrolling: touch; }
 
   .nav-inner a {
     color: var(--text-dim);
@@ -422,10 +423,12 @@
     border-radius: 8px;
     color: var(--text);
     font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
+    font-size: 16px; /* >= 16px prevents iOS auto-zoom on focus */
     padding: 16px;
     resize: vertical;
     line-height: 1.6;
+    -webkit-appearance: none; /* consistent iOS styling */
+    appearance: none;
   }
   .notes-area textarea:focus {
     outline: none;
@@ -460,21 +463,75 @@
 
   /* --- RESPONSIVE --- */
   @media (max-width: 600px) {
+    .nav-inner a {
+      padding: 16px 14px;
+      font-size: 0.68rem;
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero {
+      padding: 60px 20px;
+      min-height: 90vh;
+    }
+    .hero h1 { letter-spacing: 0.08em; }
+    .hero .riddle {
+      font-size: 1.15rem;
+      margin-top: 32px;
+      padding: 0 8px;
+    }
+    .hero .meta { font-size: 0.7rem; }
+
+    section { padding: 48px 16px; }
+    section h2 { font-size: 1.8rem; }
+
+    .characters { grid-template-columns: 1fr; }
+    .char-card { padding: 16px; }
+
+    .aria-box {
+      padding: 16px 18px;
+      margin: 16px -4px;
+    }
     .aria-lyrics {
       grid-template-columns: 1fr;
+      gap: 0;
+    }
+    .aria-lyrics .it {
+      margin-bottom: 4px;
     }
     .aria-lyrics .en {
-      margin-bottom: 12px;
-      padding-bottom: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 16px;
       border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.82rem;
     }
-    .characters {
-      grid-template-columns: 1fr;
+    .aria-climax .vincero { font-size: 1.3rem; }
+
+    .interval-box { padding: 18px 16px; }
+
+    .tip-grid { grid-template-columns: 1fr; }
+    .tip { padding: 16px; }
+
+    .notes-area textarea {
+      min-height: 120px;
+      font-size: 16px; /* prevents iOS zoom on focus */
+      padding: 14px;
     }
-    .tip-grid {
-      grid-template-columns: 1fr;
-    }
-    section { padding: 48px 20px; }
+
+    details summary { padding: 14px 16px; }
+    details .content { padding: 0 16px 16px; }
+
+    .act { padding-left: 24px; }
+
+    ul { padding-left: 16px; }
+    ul li { font-size: 0.9rem; }
+  }
+
+  @media (max-width: 380px) {
+    .hero h1 { font-size: 2.8rem; }
+    .nav-inner a { padding: 16px 10px; font-size: 0.62rem; }
+    section h2 { font-size: 1.5rem; }
   }
 
   /* Spoiler blur */
