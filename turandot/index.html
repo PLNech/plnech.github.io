@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Turandot Companion</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap');
+
+  :root {
+    --gold: #c9a84c;
+    --gold-dim: #8a7233;
+    --ice: #a8c8e8;
+    --fire: #d44a2e;
+    --night: #0a0c14;
+    --night-mid: #141824;
+    --night-light: #1e2438;
+    --text: #e8e4dc;
+    --text-dim: #8a8678;
+    --accent: #e8d5a8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--night);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    font-size: 16px;
+  }
+
+  /* --- NAV --- */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background: rgba(10, 12, 20, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+    padding: 0;
+    transition: transform 0.3s;
+  }
+  nav.hidden { transform: translateY(-100%); }
+
+  .nav-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .nav-inner::-webkit-scrollbar { display: none; }
+
+  .nav-inner a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 14px 16px;
+    white-space: nowrap;
+    transition: color 0.2s;
+    border-bottom: 2px solid transparent;
+  }
+  .nav-inner a:hover,
+  .nav-inner a.active {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+  }
+
+  /* --- HERO --- */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 30%, rgba(201, 168, 76, 0.08) 0%, transparent 60%),
+      radial-gradient(ellipse at 30% 70%, rgba(168, 200, 232, 0.04) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 80%, rgba(212, 74, 46, 0.04) 0%, transparent 50%);
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(3.5rem, 10vw, 7rem);
+    color: var(--gold);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    position: relative;
+  }
+
+  .hero .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--text-dim);
+    margin-top: 8px;
+    letter-spacing: 0.05em;
+  }
+
+  .hero .meta {
+    margin-top: 32px;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .hero .riddle {
+    margin-top: 48px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--ice);
+    max-width: 500px;
+    opacity: 0.8;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 32px;
+    animation: float 2s ease-in-out infinite;
+    color: var(--gold-dim);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  /* --- SECTIONS --- */
+  section {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 80px 24px;
+  }
+
+  section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 2.2rem;
+    color: var(--gold);
+    margin-bottom: 32px;
+    letter-spacing: 0.05em;
+  }
+
+  section h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 1.3rem;
+    color: var(--accent);
+    margin-top: 32px;
+    margin-bottom: 12px;
+  }
+
+  p { margin-bottom: 16px; }
+  p + p { margin-top: 0; }
+
+  .divider {
+    width: 60px;
+    height: 1px;
+    background: var(--gold-dim);
+    margin: 64px auto;
+  }
+
+  /* --- CHARACTER CARDS --- */
+  .characters {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .char-card {
+    background: var(--night-mid);
+    border: 1px solid rgba(201, 168, 76, 0.12);
+    border-radius: 8px;
+    padding: 20px;
+    transition: border-color 0.2s;
+  }
+  .char-card:hover { border-color: var(--gold-dim); }
+
+  .char-card .name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: var(--gold);
+    margin-bottom: 2px;
+  }
+  .char-card .voice {
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+  }
+  .char-card .desc {
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  /* --- TIMELINE --- */
+  .timeline { margin-top: 24px; }
+
+  .act {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 32px;
+  }
+  .act::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--gold-dim);
+    background: var(--night);
+  }
+  .act::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 22px;
+    width: 2px;
+    bottom: -20px;
+    background: rgba(201, 168, 76, 0.15);
+  }
+  .act:last-child::after { display: none; }
+
+  .act-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+
+  .act-mood {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+  }
+
+  .act p { font-size: 0.95rem; }
+
+  /* --- INTERVAL BOX --- */
+  .interval-box {
+    background: linear-gradient(135deg, var(--night-mid), var(--night-light));
+    border: 1px solid var(--gold-dim);
+    border-radius: 8px;
+    padding: 24px;
+    margin: 24px 0;
+    text-align: center;
+  }
+  .interval-box .label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .interval-box p {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    margin-bottom: 0;
+  }
+
+  /* --- ARIA BOX --- */
+  .aria-box {
+    background: var(--night-mid);
+    border-left: 3px solid var(--fire);
+    padding: 24px 28px;
+    margin: 24px 0;
+    border-radius: 0 8px 8px 0;
+  }
+
+  .aria-box .title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--fire);
+    margin-bottom: 12px;
+  }
+
+  .aria-lyrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 24px;
+    font-size: 0.9rem;
+    line-height: 1.8;
+  }
+  .aria-lyrics .it {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .aria-lyrics .en {
+    color: var(--text-dim);
+  }
+
+  .aria-climax {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(212, 74, 46, 0.3);
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+  }
+  .aria-climax .vincero {
+    font-size: 1.6rem;
+    color: var(--fire);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+  .aria-climax .translation {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    margin-top: 4px;
+  }
+
+  /* --- TIPS --- */
+  .tip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .tip {
+    background: var(--night-mid);
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid rgba(201, 168, 76, 0.08);
+  }
+
+  .tip .emoji {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+  }
+
+  .tip .tip-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+
+  .tip p {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+
+  /* --- COLLAPSIBLE --- */
+  details {
+    margin: 16px 0;
+    background: var(--night-mid);
+    border: 1px solid rgba(201, 168, 76, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  summary {
+    padding: 16px 20px;
+    cursor: pointer;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    color: var(--accent);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after {
+    content: '+';
+    color: var(--gold-dim);
+    font-size: 1.2rem;
+    transition: transform 0.2s;
+  }
+  details[open] summary::after {
+    content: '-';
+  }
+
+  details .content {
+    padding: 0 20px 20px;
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  /* --- NOTES AREA --- */
+  .notes-area {
+    margin-top: 24px;
+  }
+
+  .notes-area textarea {
+    width: 100%;
+    min-height: 150px;
+    background: var(--night-mid);
+    border: 1px solid rgba(201, 168, 76, 0.2);
+    border-radius: 8px;
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    padding: 16px;
+    resize: vertical;
+    line-height: 1.6;
+  }
+  .notes-area textarea:focus {
+    outline: none;
+    border-color: var(--gold-dim);
+  }
+  .notes-area textarea::placeholder {
+    color: var(--text-dim);
+    opacity: 0.5;
+  }
+
+  .notes-hint {
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    margin-top: 8px;
+    text-align: right;
+  }
+
+  /* --- FOOTER --- */
+  footer {
+    text-align: center;
+    padding: 48px 24px;
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    border-top: 1px solid rgba(201, 168, 76, 0.08);
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  footer a {
+    color: var(--gold-dim);
+    text-decoration: none;
+  }
+
+  /* --- RESPONSIVE --- */
+  @media (max-width: 600px) {
+    .aria-lyrics {
+      grid-template-columns: 1fr;
+    }
+    .aria-lyrics .en {
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .characters {
+      grid-template-columns: 1fr;
+    }
+    .tip-grid {
+      grid-template-columns: 1fr;
+    }
+    section { padding: 48px 20px; }
+  }
+
+  /* Spoiler blur */
+  .spoiler {
+    filter: blur(5px);
+    transition: filter 0.3s;
+    cursor: pointer;
+    user-select: none;
+  }
+  .spoiler.revealed,
+  .spoiler:active {
+    filter: none;
+    user-select: auto;
+  }
+  .spoiler-hint {
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#top">Turandot</a>
+    <a href="#characters">Characters</a>
+    <a href="#story">The Story</a>
+    <a href="#listen">Listen For</a>
+    <a href="#production">This Production</a>
+    <a href="#tips">Tips</a>
+    <a href="#notes">My Notes</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="top">
+  <h1>Turandot</h1>
+  <div class="subtitle">Giacomo Puccini, 1926 &mdash; his final, unfinished masterpiece</div>
+  <div class="meta">Opera Australia &bull; Joan Sutherland Theatre &bull; Sydney Opera House &bull; 145 min</div>
+  <div class="riddle">"What is the ice that gives off fire?"</div>
+  <div class="scroll-hint">scroll to begin</div>
+</div>
+
+<!-- CHARACTERS -->
+<section id="characters">
+  <h2>Who's Who</h2>
+  <p>Six voices will carry this story. No need to memorize &mdash; the surtitles will guide you. But knowing them in advance is like recognizing faces before a party: everything clicks faster.</p>
+
+  <div class="characters">
+    <div class="char-card">
+      <div class="name">Princess Turandot</div>
+      <div class="voice">Dramatic Soprano</div>
+      <div class="desc">The ice princess of Peking. Beautiful, terrifying, unreachable. She poses three riddles to her suitors &mdash; fail, and you die. There's a reason she's this way, and the opera slowly peels it back.</div>
+    </div>
+
+    <div class="char-card">
+      <div class="name">Prince Calaf</div>
+      <div class="voice">Tenor</div>
+      <div class="desc">An exiled prince, traveling in disguise. One look at Turandot and he's done for. Brave or reckless? The opera doesn't quite decide. He sings <em>that</em> aria.</div>
+    </div>
+
+    <div class="char-card">
+      <div class="name">Liu</div>
+      <div class="voice">Soprano</div>
+      <div class="desc">A young servant who has followed Calaf's blind father through exile, sustained by a single kind smile Calaf once gave her. Her love is the quiet, selfless kind. Watch her closely.</div>
+    </div>
+
+    <div class="char-card">
+      <div class="name">Timur</div>
+      <div class="voice">Bass</div>
+      <div class="desc">Calaf's father, a deposed king now blind and vulnerable. His presence grounds the story in human tenderness amid all the spectacle.</div>
+    </div>
+
+    <div class="char-card">
+      <div class="name">Ping, Pang & Pong</div>
+      <div class="voice">Baritone & Two Tenors</div>
+      <div class="desc">The Emperor's three ministers. Comic relief with a melancholy edge &mdash; they dream of peaceful country lives far from all this courtly death. In this production: reimagined as tech-era bureaucrats.</div>
+    </div>
+
+    <div class="char-card">
+      <div class="name">The Emperor Altoum</div>
+      <div class="voice">Tenor</div>
+      <div class="desc">Turandot's ancient father. Weary. Wishes someone would just solve the riddles so this can all stop. You'll feel for him.</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- STORY -->
+<section id="story">
+  <h2>The Story (Spoiler-Lite)</h2>
+  <p>I'm giving you the emotional roadmap, not the turns. The surtitles and the music will handle the rest. Trust them &mdash; Puccini was perhaps the greatest theatrical storyteller who ever wrote notes on paper.</p>
+
+  <div class="timeline">
+    <div class="act">
+      <div class="act-title">Act I &mdash; The Law of the Land</div>
+      <div class="act-mood">Mood: Dread, wonder, obsession</div>
+      <p>We arrive in a Peking drenched in fear. Someone has failed Turandot's riddles &mdash; the consequences are public and horrible. The crowd is feverish. Into this walks Calaf, who spots Turandot and, against all warnings from everyone around him, decides: <em>I will answer the riddles.</em> The whole first act is people begging him not to. He does it anyway.</p>
+    </div>
+
+    <div class="act">
+      <div class="act-title">Act II &mdash; The Three Riddles</div>
+      <div class="act-mood">Mood: Tension, triumph, a twist</div>
+      <p>The grand scene. Turandot explains <em>why</em> she does what she does &mdash; a wound from generations past. Then: three riddles, each more intense than the last. This is the sequence that'll have your heart in your throat. What follows the riddles... well, expect the unexpected. Calaf makes a bold move of his own.</p>
+    </div>
+
+    <div class="interval-box">
+      <div class="label">Interval</div>
+      <p>~20 minutes. Breathe. Grab your pre-ordered drink. Enjoy the harbour. Process what you've seen.</p>
+    </div>
+
+    <div class="act">
+      <div class="act-title">Act III &mdash; None Shall Sleep</div>
+      <div class="act-mood">Mood: Suspense, sacrifice, transformation</div>
+      <p>Night falls. Tension rises. This is where <em>Nessun dorma</em> lives &mdash; you'll know it when it hits. The act pushes every character to their emotional limit. There are real costs. There is real change. And at the end... well, that's between you and Puccini.</p>
+    </div>
+  </div>
+
+  <details>
+    <summary>The Unfinished Masterpiece</summary>
+    <div class="content">
+      <p>Puccini died in 1924 before completing the final scene. At the world premiere in 1926, conductor Arturo Toscanini famously stopped the orchestra at the exact point where Puccini's manuscript ended, turned to the audience, and said: <em>"Here the opera ends, because at this point the Maestro died."</em></p>
+      <p>The ending you'll hear was completed by Franco Alfano from Puccini's sketches. It's been debated for a century &mdash; some find it beautiful, some find it rushed. Listen with that knowledge: the seams between two composers, 100 years apart from you, trying to finish a love story.</p>
+    </div>
+  </details>
+</section>
+
+<div class="divider"></div>
+
+<!-- LISTEN FOR -->
+<section id="listen">
+  <h2>Moments to Listen For</h2>
+  <p>You don't need to "know" these in advance &mdash; they'll hit you regardless. But having a vague radar for them is like knowing when the drop comes in a song. You lean in.</p>
+
+  <h3>Signore, ascolta &mdash; Liu's Plea (Act I)</h3>
+  <p>Liu begs Calaf not to attempt the riddles. A heartbreaking soprano aria of pure, unguarded love. It's the emotional core many opera-lovers consider Puccini's finest writing. Delicate. Devastating.</p>
+
+  <h3>In questa Reggia &mdash; Turandot's Entrance (Act II)</h3>
+  <p>Turandot finally sings. She tells the story of her ancestor and why she refuses love. The soprano climbs to notes that are genuinely athletic. It's half aria, half battle cry.</p>
+
+  <h3>The Riddle Scene (Act II)</h3>
+  <p>Three riddles, answered one by one, each a mini-drama. The tension ratchets with each question. The orchestral score here is magnificent &mdash; Puccini builds the suspense like a thriller composer.</p>
+
+  <div class="aria-box">
+    <div class="title">Nessun dorma &mdash; None Shall Sleep (Act III)</div>
+    <p style="font-size: 0.85rem; color: var(--text-dim); margin-bottom: 16px;">The most famous tenor aria in opera. You've heard it in movies, stadiums, commercials. But nothing &mdash; nothing &mdash; compares to hearing it live, in context, when you know what's at stake. Here are the words, so you can close your eyes and just <em>feel</em> it:</p>
+
+    <div class="aria-lyrics">
+      <div class="it">Nessun dorma! Nessun dorma!</div>
+      <div class="en">None shall sleep! None shall sleep!</div>
+
+      <div class="it">Tu pure, o Principessa,<br>nella tua fredda stanza,<br>guardi le stelle<br>che tremano d'amore<br>e di speranza.</div>
+      <div class="en">Even you, oh Princess,<br>in your cold room,<br>watch the stars<br>that tremble with love<br>and with hope.</div>
+
+      <div class="it">Ma il mio mistero e chiuso in me,<br>il nome mio nessun sapra!</div>
+      <div class="en">But my secret is locked within me,<br>my name no one shall know!</div>
+
+      <div class="it">No, no, sulla tua bocca<br>lo diro quando la luce splendera!</div>
+      <div class="en">No, no, upon your lips<br>I will tell it when the light shines!</div>
+
+      <div class="it">Ed il mio bacio sciogliera<br>il silenzio che ti fa mia!</div>
+      <div class="en">And my kiss will dissolve<br>the silence that makes you mine!</div>
+    </div>
+
+    <div class="aria-climax">
+      <div>Dilegua, o notte! Tramontate, stelle!</div>
+      <div style="color: var(--text-dim); font-size: 0.85rem; margin-bottom: 8px;">Vanish, o night! Set, you stars!</div>
+      <div class="vincero">All'alba vincero! Vincero! VINCERO!</div>
+      <div class="translation">At dawn, I will win! I will win! I WILL WIN!</div>
+    </div>
+  </div>
+
+  <h3>The Chorus</h3>
+  <p>Turandot has Puccini's largest-ever choral writing. The crowd is practically a character. When they surge, the sound is physical. You'll feel it in your ribcage.</p>
+</section>
+
+<div class="divider"></div>
+
+<!-- THIS PRODUCTION -->
+<section id="production">
+  <h2>This Production</h2>
+  <p>This isn't a "traditional" Turandot with pagodas and chinoiserie. Director <strong>Ann Yee</strong> (choreographer and director, Australian debut) has reimagined it as a psychological landscape, centering intergenerational trauma.</p>
+
+  <h3>What to Expect Visually</h3>
+  <ul style="margin: 12px 0 16px 20px; line-height: 2;">
+    <li>Monumental modular set that moves, revolves, creates new spaces</li>
+    <li>A dancer (<strong>Hoyori Maruo</strong>) embodies Lou-Ling, Turandot's ancestor, in haunting silent choreography</li>
+    <li>A giant stylized face with moving eyes watches from upstage</li>
+    <li>Ping, Pang & Pong reimagined as tech-era administrators with computer banks</li>
+    <li>Immersive video design by Andrew Thomas Huang</li>
+  </ul>
+
+  <h3>The Voices</h3>
+  <p>Two sopranos alternate as Turandot: <strong>Rebecca Nash</strong> (fresh from the Met in New York) and <strong>Anna-Louise Cole</strong>. Reviews call Nash's performance a "triumphant homecoming." Tenor <strong>Young Woo Kim</strong> as Calaf has been singled out across every review &mdash; his <em>Nessun dorma</em> described as beautifully modulated, powerful without brute force.</p>
+  <p><strong>Maria Teresa Leva</strong> makes her Australian debut as Liu with what critics call "crystalline impeccable purity." The kind of voice that makes you forget to breathe.</p>
+
+  <h3>Conductor</h3>
+  <p><strong>Henrik Nanasi</strong> (also Australian debut) leads the orchestra "with flair and authority," keeping the massive forces from overwhelming the singers while letting Puccini's orchestration soar.</p>
+
+  <details>
+    <summary>About the 100th Anniversary</summary>
+    <div class="content">
+      <p>Turandot premiered on April 25, 1926 &mdash; making 2026 its centenary year. This Opera Australia production is part of a national partnership (the Opera Conference) celebrating the milestone. You're seeing a piece of history marking its own century. Not bad for a first opera.</p>
+    </div>
+  </details>
+</section>
+
+<div class="divider"></div>
+
+<!-- TIPS -->
+<section id="tips">
+  <h2>First-Timer Survival Kit</h2>
+
+  <div class="tip-grid">
+    <div class="tip">
+      <div class="emoji">&#x1f455;</div>
+      <div class="tip-title">Wear What You Want</div>
+      <p>Jeans to cocktail dresses &mdash; Opera Australia literally says "wear something you feel good in, that's it." No top hats required.</p>
+    </div>
+
+    <div class="tip">
+      <div class="emoji">&#x23f0;</div>
+      <div class="tip-title">Arrive 30 Min Early</div>
+      <p>7-10 min walk from Circular Quay. Grab your tickets, soak in the building, pre-order your interval drinks at the bar. They'll be waiting for you.</p>
+    </div>
+
+    <div class="tip">
+      <div class="emoji">&#x1f4d6;</div>
+      <div class="tip-title">Surtitles Have You Covered</div>
+      <p>English translations projected above the stage. You'll follow everything. No Italian required &mdash; though now you know "vincero" means "I will win."</p>
+    </div>
+
+    <div class="tip">
+      <div class="emoji">&#x1f44f;</div>
+      <div class="tip-title">When to Clap</div>
+      <p>After arias (you'll know &mdash; big vocal moment, pause, orchestra settles). After each act. At the end. Shout "bravo" (male), "brava" (female), or "bravi" (everyone) if you feel it. Don't hold back.</p>
+    </div>
+
+    <div class="tip">
+      <div class="emoji">&#x1f4f5;</div>
+      <div class="tip-title">Phone Off, Not Vibrate</div>
+      <p>Silence is part of the art. Those quiet moments between notes &mdash; that's where the magic lives. Give them to yourself.</p>
+    </div>
+
+    <div class="tip">
+      <div class="emoji">&#x1f3ad;</div>
+      <div class="tip-title">Let It Hit You</div>
+      <p>Don't intellectualize during the show. You prepared (you're here!). Now let go. If your eyes get wet during Liu's aria, you're doing opera right.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- NOTES -->
+<section id="notes">
+  <h2>My Notes</h2>
+  <p style="color: var(--text-dim); font-size: 0.9rem;">Jot down thoughts during the interval or after. These save to your browser automatically.</p>
+
+  <div class="notes-area">
+    <textarea id="notes-interval" placeholder="Interval thoughts... What hit you in Acts I & II?"></textarea>
+    <div class="notes-hint">auto-saved locally</div>
+  </div>
+
+  <div class="notes-area" style="margin-top: 16px;">
+    <textarea id="notes-after" placeholder="After the show... First impressions, favourite moments, what surprised you..."></textarea>
+    <div class="notes-hint">auto-saved locally</div>
+  </div>
+</section>
+
+<footer>
+  <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1rem; color: var(--accent); margin-bottom: 12px;">
+    "All'alba vincero" &mdash; At dawn, I will win
+  </p>
+  <p>
+    Sources:
+    <a href="https://opera.org.au/productions/turandot-sydney/">Opera Australia</a> &bull;
+    <a href="https://operawire.com/opera-australia-2026-review-turandot/">OperaWire</a> &bull;
+    <a href="https://limelight-arts.com.au/reviews/turandot-opera-australia-2026/">Limelight</a> &bull;
+    <a href="https://bachtrack.com/review-turandot-ann-yee-nanasi-nash-opera-australia-sydney-january-2026">Bachtrack</a> &bull;
+    <a href="https://thescoop.au/review-turandot-opera-australia-2026-sydney-festival/">The Scoop</a> &bull;
+    <a href="https://www.classicfm.com/composers/puccini/nessun-dorma-aria-lyrics/">Classic FM</a>
+  </p>
+</footer>
+
+<script>
+  // --- Auto-save notes ---
+  document.querySelectorAll('textarea').forEach(ta => {
+    const key = 'turandot_' + ta.id;
+    ta.value = localStorage.getItem(key) || '';
+    ta.addEventListener('input', () => localStorage.setItem(key, ta.value));
+  });
+
+  // --- Nav scroll behavior ---
+  let lastScroll = 0;
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    const current = window.scrollY;
+    if (current > lastScroll && current > 100) {
+      nav.classList.add('hidden');
+    } else {
+      nav.classList.remove('hidden');
+    }
+    lastScroll = current;
+
+    // Active section highlight
+    document.querySelectorAll('section').forEach(sec => {
+      const link = nav.querySelector(`a[href="#${sec.id}"]`);
+      if (!link) return;
+      const rect = sec.getBoundingClientRect();
+      if (rect.top <= 100 && rect.bottom >= 100) {
+        nav.querySelectorAll('a').forEach(a => a.classList.remove('active'));
+        link.classList.add('active');
+      }
+    });
+  });
+
+  // --- Spoiler reveal ---
+  document.querySelectorAll('.spoiler').forEach(el => {
+    el.addEventListener('click', () => el.classList.toggle('revealed'));
+  });
+</script>
+
+</body>
+</html>
