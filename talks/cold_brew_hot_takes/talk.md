@@ -225,7 +225,7 @@ style: |
 
 # Cold Brew, Hot Takes
 
-## _ou quand ton cerveau d'ingé capitule_
+## _my usual approach is useless here_
 
 <!--
 Salut ! Aujourd'hui on parle café. Mais aussi chaos, science, alchimie, et pourquoi vous boirez plus jamais deux fois le même espresso.
@@ -593,12 +593,26 @@ BREW CUE: Lancer l'Aeropress. Verser l'eau, commencer à attendre. "Là je fais 
 
 # Science vs Alchimie
 
+## _"La moitié de mes pour-over steps sont inutiles."_
+
+<!--
+L'alchimie, c'est quoi ? C'est la science crossover la magie. C'est croire savoir, mais en vrai c'est savoir croire.
+-->
+
+---
+
+<!-- _class: center bg-dim -->
+
+![bg brightness:0.3](img/science_alchemy.jpg)
+
+# Science vs Alchimie
+
 ## _"La moitié de mes pour-over steps sont inutiles. Le problème, c'est que je sais pas laquelle."_
 
 <!--
-L'alchimie, c'est quoi ? C'est la science crossover la magie. C'est croire savoir, mais en vrai c'est savoir croire. C'est le CMO qui dit à son pote : "je sais qu'une moitié de mon budget pub sert à rien, le problème c'est que je sais pas laquelle."
+C'est le CMO qui dit à son pote : "je sais qu'une moitié de mon budget pub sert à rien, le problème c'est que je sais pas laquelle."
 
-Les meilleurs baristas que j'ai vus font les DEUX. Ils ont des heuristiques solides — des trucs qui marchent — ET ils acceptent le mystère. C'est pas de l'ignorance. C'est de l'humilité épistémique.
+Les meilleurs baristas que j'ai vus font les DEUX. Heuristiques solides ET ils acceptent le mystère. C'est pas de l'ignorance. C'est de l'humilité épistémique.
 -->
 
 ---

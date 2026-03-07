@@ -436,7 +436,7 @@ section.bg-dim h2 {
 " lang="en-US" class="title" style="--class:title;--theme:default;--style:@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap')
 ;" data-size="16:9" data-marpit-advanced-background="content">
 <h1 id="cold-brew-hot-takes">Cold Brew, Hot Takes</h1>
-<h2 id="ou-quand-ton-cerveau-ding%C3%A9-capitule"><em>ou quand ton cerveau d'ingé capitule</em></h2>
+<h2 id="my-usual-approach-is-useless-here"><em>my usual approach is useless here</em></h2>
 </section>
 </foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-class="title" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap');
 
@@ -7875,6 +7875,648 @@ section.bg-dim h2 {
 " lang="en-US" class="center bg-dim" style="--class:center bg-dim;--theme:default;--style:@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap')
 ;" data-size="16:9" data-marpit-advanced-background="content">
 <h1 id="science-vs-alchimie-1">Science vs Alchimie</h1>
+<h2 id="la-moiti%C3%A9-de-mes-pour-over-steps-sont-inutiles"><em>&quot;La moitié de mes pour-over steps sont inutiles.&quot;</em></h2>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-class="center bg-dim" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap');
+
+:root {
+  --bg: #1c1410;
+  --bg-light: #2a1f18;
+  --cream: #f5e6d3;
+  --cream-dim: #b8a08a;
+  --accent: #c8956c;
+  --accent-light: #e8c4a0;
+}
+
+section {
+  background-color: var(--bg);
+  color: var(--cream);
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  padding: 60px 80px;
+}
+
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  color: var(--cream);
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+}
+
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--cream-dim);
+  font-size: 1.3em;
+}
+
+h3 {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  color: var(--accent);
+  font-size: 1.1em;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+em {
+  color: var(--accent-light);
+  font-style: italic;
+}
+
+strong {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+code {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 300;
+  font-size: 0.85em;
+  color: var(--accent-light);
+}
+
+pre {
+  background-color: var(--bg-light);
+  border: 1px solid #3a2a20;
+  border-radius: 8px;
+  padding: 24px 32px;
+}
+
+pre code {
+  color: var(--cream-dim);
+  line-height: 1.6;
+}
+
+blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 24px;
+  color: var(--cream-dim);
+  font-style: italic;
+}
+
+ul, ol {
+  color: var(--cream);
+}
+
+li {
+  margin-bottom: 0.4em;
+}
+
+a {
+  color: var(--accent);
+}
+
+footer {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 300;
+  font-size: 0.6em;
+  color: var(--cream-dim);
+}
+
+/* Title slide */
+section.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+section.title h1 {
+  font-size: 2.8em;
+  margin-bottom: 0;
+}
+
+section.title h2 {
+  font-size: 1.4em;
+  margin-top: 0.3em;
+}
+
+/* Centered content */
+section.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+section.center h1 {
+  font-size: 2.2em;
+}
+
+/* Quote slide */
+section.quote {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 120px;
+}
+
+section.quote h1 {
+  font-size: 2em;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+/* Avalanche slide - stacking text */
+section.avalanche p {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72em;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--cream-dim);
+  margin: 0;
+}
+
+/* Heuristics */
+section.heuristics p:not(:first-of-type) {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8em;
+  font-weight: 300;
+  line-height: 2;
+  color: var(--cream-dim);
+  margin: 0;
+}
+
+/* Minimal slide */
+section.minimal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+section.minimal h1 {
+  font-size: 2.4em;
+}
+
+section.minimal h2 {
+  font-size: 1.1em;
+  margin-top: 0.5em;
+}
+
+/* Closer */
+section.closer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+section.closer h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 2.2em;
+  line-height: 1.4;
+}
+
+section.closer h2 {
+  font-size: 1.1em;
+  margin-top: 0.5em;
+}
+
+/* Text shadow for readability on bg images */
+section.bg-dim h1,
+section.bg-dim h2 {
+  text-shadow: 0 2px 20px rgba(0,0,0,0.9), 0 0 60px rgba(0,0,0,0.7);
+}
+" lang="en-US" class="center bg-dim" style="" data-size="16:9" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-class="center bg-dim" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap');
+
+:root {
+  --bg: #1c1410;
+  --bg-light: #2a1f18;
+  --cream: #f5e6d3;
+  --cream-dim: #b8a08a;
+  --accent: #c8956c;
+  --accent-light: #e8c4a0;
+}
+
+section {
+  background-color: var(--bg);
+  color: var(--cream);
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  padding: 60px 80px;
+}
+
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  color: var(--cream);
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+}
+
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--cream-dim);
+  font-size: 1.3em;
+}
+
+h3 {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  color: var(--accent);
+  font-size: 1.1em;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+em {
+  color: var(--accent-light);
+  font-style: italic;
+}
+
+strong {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+code {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 300;
+  font-size: 0.85em;
+  color: var(--accent-light);
+}
+
+pre {
+  background-color: var(--bg-light);
+  border: 1px solid #3a2a20;
+  border-radius: 8px;
+  padding: 24px 32px;
+}
+
+pre code {
+  color: var(--cream-dim);
+  line-height: 1.6;
+}
+
+blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 24px;
+  color: var(--cream-dim);
+  font-style: italic;
+}
+
+ul, ol {
+  color: var(--cream);
+}
+
+li {
+  margin-bottom: 0.4em;
+}
+
+a {
+  color: var(--accent);
+}
+
+footer {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 300;
+  font-size: 0.6em;
+  color: var(--cream-dim);
+}
+
+/* Title slide */
+section.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+section.title h1 {
+  font-size: 2.8em;
+  margin-bottom: 0;
+}
+
+section.title h2 {
+  font-size: 1.4em;
+  margin-top: 0.3em;
+}
+
+/* Centered content */
+section.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+section.center h1 {
+  font-size: 2.2em;
+}
+
+/* Quote slide */
+section.quote {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 120px;
+}
+
+section.quote h1 {
+  font-size: 2em;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+/* Avalanche slide - stacking text */
+section.avalanche p {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72em;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--cream-dim);
+  margin: 0;
+}
+
+/* Heuristics */
+section.heuristics p:not(:first-of-type) {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8em;
+  font-weight: 300;
+  line-height: 2;
+  color: var(--cream-dim);
+  margin: 0;
+}
+
+/* Minimal slide */
+section.minimal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+section.minimal h1 {
+  font-size: 2.4em;
+}
+
+section.minimal h2 {
+  font-size: 1.1em;
+  margin-top: 0.5em;
+}
+
+/* Closer */
+section.closer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+section.closer h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 2.2em;
+  line-height: 1.4;
+}
+
+section.closer h2 {
+  font-size: 1.1em;
+  margin-top: 0.5em;
+}
+
+/* Text shadow for readability on bg images */
+section.bg-dim h1,
+section.bg-dim h2 {
+  text-shadow: 0 2px 20px rgba(0,0,0,0.9), 0 0 60px rgba(0,0,0,0.7);
+}
+" lang="en-US" class="center bg-dim" style="--class:center bg-dim;--theme:default;--style:@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap')
+;" data-size="16:9" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;img/science_alchemy.jpg&quot;);filter:brightness(0.3);"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="28" data-class="center bg-dim" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap');
+
+:root {
+  --bg: #1c1410;
+  --bg-light: #2a1f18;
+  --cream: #f5e6d3;
+  --cream-dim: #b8a08a;
+  --accent: #c8956c;
+  --accent-light: #e8c4a0;
+}
+
+section {
+  background-color: var(--bg);
+  color: var(--cream);
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  padding: 60px 80px;
+}
+
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  color: var(--cream);
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+}
+
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--cream-dim);
+  font-size: 1.3em;
+}
+
+h3 {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  color: var(--accent);
+  font-size: 1.1em;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+em {
+  color: var(--accent-light);
+  font-style: italic;
+}
+
+strong {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+code {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 300;
+  font-size: 0.85em;
+  color: var(--accent-light);
+}
+
+pre {
+  background-color: var(--bg-light);
+  border: 1px solid #3a2a20;
+  border-radius: 8px;
+  padding: 24px 32px;
+}
+
+pre code {
+  color: var(--cream-dim);
+  line-height: 1.6;
+}
+
+blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 24px;
+  color: var(--cream-dim);
+  font-style: italic;
+}
+
+ul, ol {
+  color: var(--cream);
+}
+
+li {
+  margin-bottom: 0.4em;
+}
+
+a {
+  color: var(--accent);
+}
+
+footer {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 300;
+  font-size: 0.6em;
+  color: var(--cream-dim);
+}
+
+/* Title slide */
+section.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+section.title h1 {
+  font-size: 2.8em;
+  margin-bottom: 0;
+}
+
+section.title h2 {
+  font-size: 1.4em;
+  margin-top: 0.3em;
+}
+
+/* Centered content */
+section.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+section.center h1 {
+  font-size: 2.2em;
+}
+
+/* Quote slide */
+section.quote {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 120px;
+}
+
+section.quote h1 {
+  font-size: 2em;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+/* Avalanche slide - stacking text */
+section.avalanche p {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72em;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--cream-dim);
+  margin: 0;
+}
+
+/* Heuristics */
+section.heuristics p:not(:first-of-type) {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8em;
+  font-weight: 300;
+  line-height: 2;
+  color: var(--cream-dim);
+  margin: 0;
+}
+
+/* Minimal slide */
+section.minimal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+section.minimal h1 {
+  font-size: 2.4em;
+}
+
+section.minimal h2 {
+  font-size: 1.1em;
+  margin-top: 0.5em;
+}
+
+/* Closer */
+section.closer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+section.closer h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 2.2em;
+  line-height: 1.4;
+}
+
+section.closer h2 {
+  font-size: 1.1em;
+  margin-top: 0.5em;
+}
+
+/* Text shadow for readability on bg images */
+section.bg-dim h1,
+section.bg-dim h2 {
+  text-shadow: 0 2px 20px rgba(0,0,0,0.9), 0 0 60px rgba(0,0,0,0.7);
+}
+" lang="en-US" class="center bg-dim" style="--class:center bg-dim;--theme:default;--style:@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap')
+;" data-size="16:9" data-marpit-advanced-background="content">
+<h1 id="science-vs-alchimie-2">Science vs Alchimie</h1>
 <h2 id="la-moiti%C3%A9-de-mes-pour-over-steps-sont-inutiles-le-probl%C3%A8me-cest-que-je-sais-pas-laquelle"><em>&quot;La moitié de mes pour-over steps sont inutiles. Le problème, c'est que je sais pas laquelle.&quot;</em></h2>
 </section>
 </foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-class="center bg-dim" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap');
@@ -8089,7 +8731,7 @@ section.bg-dim h1,
 section.bg-dim h2 {
   text-shadow: 0 2px 20px rgba(0,0,0,0.9), 0 0 60px rgba(0,0,0,0.7);
 }
-" lang="en-US" class="center bg-dim" style="" data-size="16:9" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="28" data-class="heuristics" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap');
+" lang="en-US" class="center bg-dim" style="" data-size="16:9" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="29" data-class="heuristics" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap');
 
 :root {
   --bg: #1c1410;
@@ -8306,7 +8948,7 @@ section.bg-dim h2 {
 <h3 id="lordre-dans-le-chaos-un-peu">L'ordre dans le chaos (un peu)</h3>
 <p><em>Quelques heuristiques qui marchent (pour moi) (aujourd'hui) (peut-être)</em></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="29" data-class="heuristics" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap');
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="30" data-class="heuristics" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap');
 
 :root {
   --bg: #1c1410;
@@ -8524,7 +9166,7 @@ section.bg-dim h2 {
 <p><em>Quelques heuristiques qui marchent (pour moi) (aujourd'hui) (peut-être)</em></p>
 <p>Grains frais (&lt; 4 semaines post-torréfaction)</p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="30" data-class="heuristics" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap');
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="31" data-class="heuristics" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap');
 
 :root {
   --bg: #1c1410;
@@ -8743,7 +9385,7 @@ section.bg-dim h2 {
 <p>Grains frais (&lt; 4 semaines post-torréfaction)<br />
 Fraîchement moulu &gt; pré-moulu</p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="31" data-class="heuristics" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap');
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="32" data-class="heuristics" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap');
 
 :root {
   --bg: #1c1410;
@@ -8963,7 +9605,7 @@ section.bg-dim h2 {
 Fraîchement moulu &gt; pré-moulu<br />
 Light/medium &gt; dark (pour moi !)</p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="32" data-class="heuristics" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap');
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="33" data-class="heuristics" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap');
 
 :root {
   --bg: #1c1410;
@@ -9184,7 +9826,7 @@ Fraîchement moulu &gt; pré-moulu<br />
 Light/medium &gt; dark (pour moi !)<br />
 Eau pas bouillante (si 98° → matcha)</p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="33" data-class="heuristics" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap');
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="34" data-class="heuristics" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap');
 
 :root {
   --bg: #1c1410;
@@ -9619,7 +10261,7 @@ section.bg-dim h2 {
   text-shadow: 0 2px 20px rgba(0,0,0,0.9), 0 0 60px rgba(0,0,0,0.7);
 }
 " lang="en-US" class="center bg-dim" style="--class:center bg-dim;--theme:default;--style:@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap')
-;" data-size="16:9" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;img/cold_brew.jpg&quot;);filter:brightness(0.35);"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="34" data-class="center bg-dim" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap');
+;" data-size="16:9" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;img/cold_brew.jpg&quot;);filter:brightness(0.35);"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="35" data-class="center bg-dim" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap');
 
 :root {
   --bg: #1c1410;
@@ -10047,7 +10689,7 @@ section.bg-dim h1,
 section.bg-dim h2 {
   text-shadow: 0 2px 20px rgba(0,0,0,0.9), 0 0 60px rgba(0,0,0,0.7);
 }
-" lang="en-US" class="center bg-dim" style="" data-size="16:9" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="35" data-class="minimal" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap');
+" lang="en-US" class="center bg-dim" style="" data-size="16:9" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="36" data-class="minimal" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap');
 
 :root {
   --bg: #1c1410;
@@ -10263,7 +10905,7 @@ section.bg-dim h2 {
 ;" data-size="16:9">
 <h1 id="cette-musique-l%C3%A0-maintenant">Cette musique, là, maintenant.</h1>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="36" data-class="minimal" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap');
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="37" data-class="minimal" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap');
 
 :root {
   --bg: #1c1410;
@@ -10480,7 +11122,7 @@ section.bg-dim h2 {
 <h1 id="cette-musique-l%C3%A0-maintenant-1">Cette musique, là, maintenant.</h1>
 <h2 id="genai-slop--does-it-matter"><em>GenAI slop ? Does it <em>matter</em> ?</em></h2>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="37" data-class="center" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap');
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="38" data-class="center" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap');
 
 :root {
   --bg: #1c1410;
@@ -10696,7 +11338,7 @@ section.bg-dim h2 {
 ;" data-size="16:9">
 <h1 id="btw-lia">BTW, l'IA...</h1>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="38" data-class="center" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap');
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="39" data-class="center" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap');
 
 :root {
   --bg: #1c1410;
@@ -10913,7 +11555,7 @@ section.bg-dim h2 {
 <h1 id="btw-lia-1">BTW, l'IA...</h1>
 <h2 id="welcome-to-the-club"><em>Welcome to the club.</em></h2>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="39" data-class="center" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap');
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="40" data-class="center" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap');
 
 :root {
   --bg: #1c1410;
@@ -11130,7 +11772,7 @@ section.bg-dim h2 {
 <h3 id="moment-de-v%C3%A9rit%C3%A9">Moment de vérité</h3>
 <h1 id="v60--aeropress">V60 / Aeropress</h1>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="40" data-class="center" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap');
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="41" data-class="center" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap');
 
 :root {
   --bg: #1c1410;
@@ -11561,7 +12203,7 @@ section.bg-dim h2 {
   text-shadow: 0 2px 20px rgba(0,0,0,0.9), 0 0 60px rgba(0,0,0,0.7);
 }
 " lang="en-US" class="closer bg-dim" style="--class:closer bg-dim;--theme:default;--style:@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap')
-;" data-size="16:9" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;img/open_road.jpg&quot;);filter:brightness(0.35);"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="41" data-class="closer bg-dim" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap');
+;" data-size="16:9" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;img/open_road.jpg&quot;);filter:brightness(0.35);"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="42" data-class="closer bg-dim" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap');
 
 :root {
   --bg: #1c1410;
@@ -12202,7 +12844,7 @@ section.bg-dim h2 {
   text-shadow: 0 2px 20px rgba(0,0,0,0.9), 0 0 60px rgba(0,0,0,0.7);
 }
 " lang="en-US" class="closer bg-dim" style="--class:closer bg-dim;--theme:default;--style:@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap')
-;" data-size="16:9" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;img/open_road.jpg&quot;);filter:brightness(0.35);"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="42" data-class="closer bg-dim" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap');
+;" data-size="16:9" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;img/open_road.jpg&quot;);filter:brightness(0.35);"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="43" data-class="closer bg-dim" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Work+Sans:wght@300;400;500&amp;family=JetBrains+Mono:wght@300;400&amp;display=swap');
 
 :root {
   --bg: #1c1410;
@@ -12654,35 +13296,35 @@ BREW CUE: V60 — troisième pour. &quot;Variable.&quot;</p></div><div class="be
 
 En pratique ? Tu changes la mouture ET il fait 3 degrés de plus dans ta cuisine ET t'as mangé un croissant avant ET les grains ont un jour de plus. Bonne chance pour isoler quoi que ce soit.
 
-BREW CUE: Lancer l'Aeropress. Verser l'eau, commencer à attendre. &quot;Là je fais une Aeropress inversée. Mêmes grains que le V60. Même eau. On verra.&quot;</p></div><div class="bespoke-marp-note" data-index="26" tabindex="0"><p>L'alchimie, c'est quoi ? C'est la science crossover la magie. C'est croire savoir, mais en vrai c'est savoir croire. C'est le CMO qui dit à son pote : &quot;je sais qu'une moitié de mon budget pub sert à rien, le problème c'est que je sais pas laquelle.&quot;
+BREW CUE: Lancer l'Aeropress. Verser l'eau, commencer à attendre. &quot;Là je fais une Aeropress inversée. Mêmes grains que le V60. Même eau. On verra.&quot;</p></div><div class="bespoke-marp-note" data-index="26" tabindex="0"><p>L'alchimie, c'est quoi ? C'est la science crossover la magie. C'est croire savoir, mais en vrai c'est savoir croire.</p></div><div class="bespoke-marp-note" data-index="27" tabindex="0"><p>C'est le CMO qui dit à son pote : &quot;je sais qu'une moitié de mon budget pub sert à rien, le problème c'est que je sais pas laquelle.&quot;
 
-Les meilleurs baristas que j'ai vus font les DEUX. Ils ont des heuristiques solides — des trucs qui marchent — ET ils acceptent le mystère. C'est pas de l'ignorance. C'est de l'humilité épistémique.</p></div><div class="bespoke-marp-note" data-index="27" tabindex="0"><p>Mais c'est pas parce que c'est chaotique qu'on peut rien dire. On n'a pas un modèle complet, mais on a des heuristiques.</p></div><div class="bespoke-marp-note" data-index="28" tabindex="0"><p>Les miennes : grains frais...</p></div><div class="bespoke-marp-note" data-index="31" tabindex="0"><p>Et si ton percolateur est réglé à 98 degrés, je prendrai un matcha, merci.</p></div><div class="bespoke-marp-note" data-index="32" tabindex="0"><p>Le reste ? Honnêtement, c'est du feeling. Et le feeling change.
+Les meilleurs baristas que j'ai vus font les DEUX. Heuristiques solides ET ils acceptent le mystère. C'est pas de l'ignorance. C'est de l'humilité épistémique.</p></div><div class="bespoke-marp-note" data-index="28" tabindex="0"><p>Mais c'est pas parce que c'est chaotique qu'on peut rien dire. On n'a pas un modèle complet, mais on a des heuristiques.</p></div><div class="bespoke-marp-note" data-index="29" tabindex="0"><p>Les miennes : grains frais...</p></div><div class="bespoke-marp-note" data-index="32" tabindex="0"><p>Et si ton percolateur est réglé à 98 degrés, je prendrai un matcha, merci.</p></div><div class="bespoke-marp-note" data-index="33" tabindex="0"><p>Le reste ? Honnêtement, c'est du feeling. Et le feeling change.
 
-BREW CUE: Aeropress — presser lentement. &quot;Vous entendez ce sifflement ? Normalement c'est signe que c'est bon. Normalement.&quot;</p></div><div class="bespoke-marp-note" data-index="33" tabindex="0"><p>MUSIC CUE: Lancer le track ici. Volume bas, ambiance. Le track joue jusqu'à la fin.
+BREW CUE: Aeropress — presser lentement. &quot;Vous entendez ce sifflement ? Normalement c'est signe que c'est bon. Normalement.&quot;</p></div><div class="bespoke-marp-note" data-index="34" tabindex="0"><p>MUSIC CUE: Lancer le track ici. Volume bas, ambiance. Le track joue jusqu'à la fin.
 
 La semaine dernière à Sydney, dans un coffee shop. &quot;What's in your cold brew?&quot; — &quot;Everything. Lol.&quot;
 
 Le cold brew c'est là où les grains vont mourir. T'as des vieux trucs, des fins de sac, tu fous tout dedans, extraction longue à froid, et... parfois c'est délicieux ?
 
-J'ai fait un cold brew chez moi avec des grains que j'aurais dû jeter. Résultat : incroyable.</p></div><div class="bespoke-marp-note" data-index="34" tabindex="0"><p>Ce morceau que vous écoutez là. Il est très probablement généré par une IA. Ou pas. J'en sais rien en fait. Mais il sonne bien, non ?</p></div><div class="bespoke-marp-note" data-index="35" tabindex="0"><p>Est-ce que ça change quelque chose de pas savoir ? Est-ce que vous l'appréciez moins maintenant que j'ai semé le doute ?
+J'ai fait un cold brew chez moi avec des grains que j'aurais dû jeter. Résultat : incroyable.</p></div><div class="bespoke-marp-note" data-index="35" tabindex="0"><p>Ce morceau que vous écoutez là. Il est très probablement généré par une IA. Ou pas. J'en sais rien en fait. Mais il sonne bien, non ?</p></div><div class="bespoke-marp-note" data-index="36" tabindex="0"><p>Est-ce que ça change quelque chose de pas savoir ? Est-ce que vous l'appréciez moins maintenant que j'ai semé le doute ?
 
-Laisser le track jouer quelques secondes. Rien dire. Laisser la question infuser (lol).</p></div><div class="bespoke-marp-note" data-index="36" tabindex="0"><p>Petit aside pour ceux qui bossent avec des LLMs ou qui parlent à des IAs. C'est exactement le même chaos. Personne sait vraiment ce qu'il y a dedans. Mes poèmes et mon code sont quelque part là-dedans, comme de vieux grains dans un cold brew. Et pourtant ça sort parfois un truc beau. Parfois non.
+Laisser le track jouer quelques secondes. Rien dire. Laisser la question infuser (lol).</p></div><div class="bespoke-marp-note" data-index="37" tabindex="0"><p>Petit aside pour ceux qui bossent avec des LLMs ou qui parlent à des IAs. C'est exactement le même chaos. Personne sait vraiment ce qu'il y a dedans. Mes poèmes et mon code sont quelque part là-dedans, comme de vieux grains dans un cold brew. Et pourtant ça sort parfois un truc beau. Parfois non.
 
-Même prompt, résultat différent. Même modèle, vibe différente. Vous contrôlez pas tout. Vous comprenez pas tout.</p></div><div class="bespoke-marp-note" data-index="37" tabindex="0"><p>Bienvenue au club.
+Même prompt, résultat différent. Même modèle, vibe différente. Vous contrôlez pas tout. Vous comprenez pas tout.</p></div><div class="bespoke-marp-note" data-index="38" tabindex="0"><p>Bienvenue au club.
 
 Embrace the chaos. But not them. Les AI girlfriends c'est pas mon sujet — mais sachez que les fiancées qui tolèrent votre obsession café, c'est mieux.
 
-Rire. Transition douce vers la dégustation.</p></div><div class="bespoke-marp-note" data-index="38" tabindex="0"><p>BREW CUE: Distribuer les tasses.</p></div><div class="bespoke-marp-note" data-index="39" tabindex="0"><p>Mêmes grains. Même eau. Même moi qui les a faits. Mais pas le même résultat.
+Rire. Transition douce vers la dégustation.</p></div><div class="bespoke-marp-note" data-index="39" tabindex="0"><p>BREW CUE: Distribuer les tasses.</p></div><div class="bespoke-marp-note" data-index="40" tabindex="0"><p>Mêmes grains. Même eau. Même moi qui les a faits. Mais pas le même résultat.
 
 Lequel est meilleur ? Goûtez. Discutez entre vous.
 
 ...Vous êtes pas d'accord ? Bah évidemment que vous êtes pas d'accord. Parce que la dernière variable, c'est vous.
 
-MUSIC: Le track monte vers le climax (4:18). Laisser le silence arriver naturellement avec le fade (4:26).</p></div><div class="bespoke-marp-note" data-index="40" tabindex="0"><p>(Après le fade du track. Voix posée.)
+MUSIC: Le track monte vers le climax (4:18). Laisser le silence arriver naturellement avec le fade (4:26).</p></div><div class="bespoke-marp-note" data-index="41" tabindex="0"><p>(Après le fade du track. Voix posée.)
 
 On ne boit jamais deux fois le même café. Mêmes grains, mêmes gestes, même tasse — c'est différent. Et c'est pas un bug. C'est le feature.
 
-La science nous file des heuristiques. L'alchimie nous file la permission de pas tout comprendre. Et le café du mardi sera toujours un peu différent de celui du lundi.</p></div><div class="bespoke-marp-note" data-index="41" tabindex="0"><p>Vivement le prochain.
+La science nous file des heuristiques. L'alchimie nous file la permission de pas tout comprendre. Et le café du mardi sera toujours un peu différent de celui du lundi.</p></div><div class="bespoke-marp-note" data-index="42" tabindex="0"><p>Vivement le prochain.
 
 Merci.
 
