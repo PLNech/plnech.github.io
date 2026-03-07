@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+<title>Cold Brew, Hot Takes — Companion</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Work+Sans:wght@300;400;500&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #1c1410;
+    --bg-card: #251c15;
+    --cream: #f5e6d3;
+    --cream-dim: #b8a08a;
+    --accent: #c8956c;
+    --accent-light: #e8c4a0;
+    --brew: #6b8f5e;
+    --music: #8b6bb5;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--cream);
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    padding: 16px;
+    padding-bottom: 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  header {
+    text-align: center;
+    padding: 24px 0 32px;
+    border-bottom: 1px solid #3a2a20;
+    margin-bottom: 24px;
+  }
+
+  header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 1.8em;
+    letter-spacing: 0.04em;
+  }
+
+  header p {
+    color: var(--cream-dim);
+    font-size: 0.85em;
+    margin-top: 4px;
+  }
+
+  .section {
+    background: var(--bg-card);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    border-left: 3px solid var(--accent);
+  }
+
+  .section.has-brew {
+    border-left-color: var(--brew);
+  }
+
+  .section.has-music {
+    border-left-color: var(--music);
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 1.3em;
+    color: var(--accent-light);
+    margin-bottom: 8px;
+  }
+
+  .section-title .slide-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6em;
+    color: var(--cream-dim);
+    margin-right: 8px;
+  }
+
+  .notes {
+    color: var(--cream);
+    font-size: 0.95em;
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+
+  .notes p {
+    margin-bottom: 8px;
+  }
+
+  .cue {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 0.88em;
+    line-height: 1.5;
+    margin-top: 10px;
+  }
+
+  .cue-brew {
+    background: rgba(107, 143, 94, 0.15);
+    border: 1px solid rgba(107, 143, 94, 0.3);
+    color: #a8d49a;
+  }
+
+  .cue-music {
+    background: rgba(139, 107, 181, 0.15);
+    border: 1px solid rgba(139, 107, 181, 0.3);
+    color: #c4a8e8;
+  }
+
+  .cue-label {
+    font-weight: 500;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .timing-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--bg-card);
+    border-top: 1px solid #3a2a20;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .timing-bar button {
+    background: var(--accent);
+    color: var(--bg);
+    border: none;
+    border-radius: 8px;
+    padding: 8px 20px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
+    font-size: 0.9em;
+    cursor: pointer;
+    touch-action: manipulation;
+  }
+
+  .timing-bar button:active {
+    opacity: 0.8;
+  }
+
+  .timing-bar .timer {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.4em;
+    color: var(--cream);
+  }
+
+  .timing-bar .timer.warning {
+    color: var(--accent);
+  }
+
+  .timing-bar .timer.danger {
+    color: #e07070;
+  }
+
+  .divider {
+    text-align: center;
+    color: var(--cream-dim);
+    font-size: 0.75em;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 8px 0;
+  }
+
+  /* Scroll hint for active section */
+  .section.active {
+    border-left-color: var(--cream);
+    box-shadow: 0 0 20px rgba(200, 149, 108, 0.1);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Cold Brew, Hot Takes</h1>
+  <p>Companion — speaker notes & brew cues</p>
+</header>
+
+<div class="section has-brew">
+  <div class="section-title"><span class="slide-num">#1</span>Titre — Lancer les brews</div>
+  <div class="notes">
+    <p>Salut ! Aujourd'hui on parle cafe. Mais aussi chaos, science, alchimie, et pourquoi vous boirez plus jamais deux fois le meme espresso.</p>
+    <p>D'ailleurs — pendant qu'on cause, je vais preparer deux cafes. Memes grains, deux methodes. On goute a la fin.</p>
+  </div>
+  <div class="cue cue-brew">
+    <span class="cue-label">BREW</span>
+    Rincer le filtre V60, montrer les grains, les sentir. Setup visible pour tout le monde.
+  </div>
+</div>
+
+<div class="section has-brew">
+  <div class="section-title"><span class="slide-num">#2</span>"Cherie, il y a un cafe la-bas"</div>
+  <div class="notes">
+    <p>J'ai commence le cafe pour une raison tres noble : ma copine avait souvent besoin de toilettes quand on se baladait en vacances. Du coup on s'arretait dans des cafes. Beaucoup de cafes.</p>
+    <p>Et une fois sur cinq... c'etait pas juste un shot de cafeine. C'etait bon. Genre, vraiment bon.</p>
+    <p>Et la j'ai voulu comprendre. Pourquoi celui-ci et pas celui-la ?</p>
+  </div>
+  <div class="cue cue-brew">
+    <span class="cue-label">BREW</span>
+    V60 bloom — verser un peu d'eau, laisser gonfler. "Vous voyez ca ? Ca s'appelle le bloom. Les grains frais degagent du CO2. Deja la, y'a de la chimie."
+  </div>
+</div>
+
+<div class="section has-brew">
+  <div class="section-title"><span class="slide-num">#3</span>"So... you work in the industry?"</div>
+  <div class="notes">
+    <p>Retour au meme shop — cette fois, pas pareil. Achete les grains, a la maison, pas pareil non plus. Lu le manuel de la machine espresso, enfin de la crema ! Puis le filter. Plus je goute, plus y'a de palette. Plus je pose de questions dans les shops...</p>
+    <p>"So you work in the industry?" Euh... non ? Mais je suis industrieux vis-a-vis du cafe, ca compte ?</p>
+    <p>T+3 ans, je suis la devant vous. Envoyez de l'aide.</p>
+  </div>
+  <div class="cue cue-brew">
+    <span class="cue-label">BREW</span>
+    V60 premier pour. Geste lent, circulaire. Laisser passer.
+  </div>
+</div>
+
+<div class="divider">— L'AVALANCHE —</div>
+
+<div class="section has-brew">
+  <div class="section-title"><span class="slide-num">#4-25</span>Les variables</div>
+  <div class="notes">
+    <p>J'ai voulu tout comprendre. Et plus je comprends, plus je realise que c'est fractal. Chaque variable cache dix sous-variables.</p>
+    <p>Et tout en bas de la liste — la variable qu'on oublie toujours — toi. Ton palais du mardi c'est pas ton palais du lundi. T'as mange quoi avant ? T'as bien dormi ? T'es stresse ? On croit tous qu'on est plus objectif que la moyenne de nos amis. Spoiler : non.</p>
+  </div>
+  <div class="cue cue-brew">
+    <span class="cue-label">BREW</span>
+    V60 — deuxieme et troisieme pour. "Vous voyez, la je fais des gestes 'precis'. Mais ma main tremble un peu parce que je parle en meme temps. Variable."
+  </div>
+</div>
+
+<div class="divider">— PIVOT —</div>
+
+<div class="section has-brew">
+  <div class="section-title"><span class="slide-num">#26-27</span>Science vs Alchimie</div>
+  <div class="notes">
+    <p>La science, c'est isoler les variables. Changer UNE chose, mesurer le resultat. En theorie, parfait.</p>
+    <p>En pratique ? Tu changes la mouture ET il fait 3 degres de plus dans ta cuisine ET t'as mange un croissant avant ET les grains ont un jour de plus. Bonne chance pour isoler quoi que ce soit.</p>
+    <p>L'alchimie, c'est quoi ? C'est la science crossover la magie. C'est croire savoir, mais en vrai c'est savoir croire.</p>
+    <p>Les meilleurs baristas que j'ai vus font les DEUX. Heuristiques solides ET ils acceptent le mystere. C'est pas de l'ignorance. C'est de l'humilite epistemique.</p>
+  </div>
+  <div class="cue cue-brew">
+    <span class="cue-label">BREW</span>
+    Lancer l'Aeropress. Verser l'eau, commencer a attendre. "La je fais une Aeropress inversee. Memes grains que le V60. Meme eau. On verra."
+  </div>
+</div>
+
+<div class="section has-brew">
+  <div class="section-title"><span class="slide-num">#28-33</span>L'ordre dans le chaos (un peu)</div>
+  <div class="notes">
+    <p>C'est pas parce que c'est chaotique qu'on peut rien dire. On a des heuristiques. Les miennes : grains frais, fraichement moulus, light-to-medium roast — le dark roast pour moi c'est non. Et si ton percolateur est regle a 98 degres, je prendrai un matcha, merci.</p>
+    <p>Le reste ? Honnetement, c'est du feeling. Et le feeling change.</p>
+  </div>
+  <div class="cue cue-brew">
+    <span class="cue-label">BREW</span>
+    Aeropress — presser lentement. "Vous entendez ce sifflement ? Normalement c'est signe que c'est bon. Normalement."
+  </div>
+</div>
+
+<div class="divider">— MUSIQUE + DEGUSTATION —</div>
+
+<div class="section has-music">
+  <div class="section-title"><span class="slide-num">#34</span>Do you care how the sausage is made?</div>
+  <div class="notes">
+    <p>La semaine derniere a Sydney, dans un coffee shop. "What's in your cold brew?" — "Everything. Lol."</p>
+    <p>Le cold brew c'est la ou les grains vont mourir. T'as des vieux trucs, des fins de sac, tu fous tout dedans, extraction longue a froid, et... parfois c'est delicieux ?</p>
+    <p>J'ai fait un cold brew chez moi avec des grains que j'aurais du jeter. Resultat : incroyable.</p>
+  </div>
+  <div class="cue cue-music">
+    <span class="cue-label">MUSIC</span>
+    Lancer le track ici. Volume bas, ambiance. Le track joue jusqu'a la fin.
+  </div>
+</div>
+
+<div class="section has-music">
+  <div class="section-title"><span class="slide-num">#35-36</span>Cette musique, la, maintenant.</div>
+  <div class="notes">
+    <p>Ce morceau que vous ecoutez la. Il est tres probablement genere par une IA. Ou pas. J'en sais rien en fait. Mais il sonne bien, non ?</p>
+    <p>Est-ce que ca change quelque chose de pas savoir ? Est-ce que vous l'appreciez moins maintenant que j'ai seme le doute ?</p>
+    <p><em>Laisser le track jouer quelques secondes. Rien dire. Laisser la question infuser.</em></p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="slide-num">#37-38</span>BTW, l'IA...</div>
+  <div class="notes">
+    <p>Petit aside pour ceux qui bossent avec des LLMs. C'est exactement le meme chaos. Personne sait vraiment ce qu'il y a dedans. Mes poemes et mon code sont quelque part la-dedans, comme de vieux grains dans un cold brew. Et pourtant ca sort parfois un truc beau. Parfois non.</p>
+    <p>Meme prompt, resultat different. Meme modele, vibe differente. Vous controlez pas tout. Vous comprenez pas tout. Bienvenue au club.</p>
+    <p>Embrace the chaos. But not them. Les AI girlfriends c'est pas mon sujet — mais sachez que les fiancees qui tolerent votre obsession cafe, c'est mieux.</p>
+  </div>
+</div>
+
+<div class="section has-brew has-music">
+  <div class="section-title"><span class="slide-num">#39-40</span>Moment de verite — V60 / Aeropress</div>
+  <div class="notes">
+    <p>Memes grains. Meme eau. Meme moi qui les a faits. Mais pas le meme resultat.</p>
+    <p>Lequel est meilleur ? Goutez. Discutez entre vous.</p>
+    <p>...Vous etes pas d'accord ? Bah evidemment que vous etes pas d'accord. Parce que la derniere variable, c'est vous.</p>
+  </div>
+  <div class="cue cue-brew">
+    <span class="cue-label">BREW</span>
+    Distribuer les tasses. Chacun goute les deux.
+  </div>
+  <div class="cue cue-music">
+    <span class="cue-label">MUSIC</span>
+    Le track monte vers le climax (4:18). Laisser le silence arriver naturellement avec le fade (4:26).
+  </div>
+</div>
+
+<div class="section has-music">
+  <div class="section-title"><span class="slide-num">#41-42</span>On ne boit jamais deux fois le meme cafe.</div>
+  <div class="notes">
+    <p><em>(Apres le fade du track. Voix posee.)</em></p>
+    <p>On ne boit jamais deux fois le meme cafe. Memes grains, memes gestes, meme tasse — c'est different. Et c'est pas un bug. C'est le feature.</p>
+    <p>La science nous file des heuristiques. L'alchimie nous file la permission de pas tout comprendre. Et le cafe du mardi sera toujours un peu different de celui du lundi.</p>
+    <p><strong>Vivement le prochain.</strong></p>
+    <p>Merci.</p>
+  </div>
+</div>
+
+<div class="timing-bar">
+  <button id="timer-btn" onclick="toggleTimer()">START</button>
+  <div class="timer" id="timer">0:00</div>
+</div>
+
+<script>
+let running = false;
+let start = 0;
+let elapsed = 0;
+let interval;
+const TOTAL = 600; // 10 min
+
+function toggleTimer() {
+  const btn = document.getElementById('timer-btn');
+  if (!running) {
+    start = Date.now() - elapsed * 1000;
+    interval = setInterval(updateTimer, 200);
+    btn.textContent = 'PAUSE';
+    running = true;
+  } else {
+    clearInterval(interval);
+    btn.textContent = 'RESUME';
+    running = false;
+  }
+}
+
+function updateTimer() {
+  elapsed = (Date.now() - start) / 1000;
+  const mins = Math.floor(elapsed / 60);
+  const secs = Math.floor(elapsed % 60);
+  const el = document.getElementById('timer');
+  el.textContent = mins + ':' + String(secs).padStart(2, '0');
+  el.className = 'timer' + (elapsed > TOTAL ? ' danger' : elapsed > TOTAL * 0.8 ? ' warning' : '');
+}
+</script>
+
+</body>
+</html>
