@@ -21,6 +21,12 @@ talks/
 │   ├── talk.html                 # Compiled output
 │   ├── index.html                # Redirects to talk.html
 │   └── img/
+├── haystack26/                   # "Memory is a Retrieval Problem"
+│   │                             # Haystack EU 2026, Berlin, Main Stage - 16 September 2026
+│   ├── talk.html                 # Compiled Marp presentation, 40 slides
+│   ├── index.html                # Redirects to talk.html
+│   ├── haystack26.pdf            # Handout, same 40 slides, linked bottom-right of talk.html
+│   └── img/
 └── .crush/                       # Image optimization (gitignored)
 ```
 
@@ -119,7 +125,8 @@ Multi-line supported.
 
 ## Deployment
 
-- **Hosting**: GitHub Pages at `me.nech.pl`
+- **Hosting**: GitHub Pages at `me.nech.pl`, also served directly at `plnech.github.io`
+- **404**: root `404.html` sends any unresolved path to `me.nech.pl/talks` (meta refresh first, script second)
 - **Protected talks**: Client-side SHA-256 password gate + `sessionStorage`, with `noindex` meta tags
 - **Redirect chain**: Each `index.html` redirects to `talk.html`
 - **Companion pages**: Mobile-friendly HTML pages with speaker notes/cues for presenter use (separate from Marp output)
