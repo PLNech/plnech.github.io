@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Memory is a Retrieval Problem &middot; the talk, in words</title>
+<meta name="description" content="The spoken narrative of the Haystack EU 2026 talk, slide by slide.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=IBM+Plex+Sans:wght@400;600;700&display=swap">
+<style>
+:root{--ground:#FAFAFC;--card:#FFF;--ink:#000033;--body:#23263B;--muted:#565A82;--rule:#DCDCEA;--accent:#003DFF}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--body);
+  font-family:"IBM Plex Sans","Segoe UI",Helvetica,Arial,sans-serif;font-size:16px;line-height:1.5}
+.wrap{max-width:760px;margin:0 auto;padding-inline:20px;padding-block:0 80px}
+h1{font-family:Newsreader,Georgia,serif;font-weight:600;font-size:38px;line-height:1.12;
+  color:var(--ink);margin:38px 0 8px;text-wrap:balance}
+.sub{color:var(--muted);margin:0 0 30px;font-size:15px}
+.sub a{color:var(--accent)}
+section{background:var(--card);border:1px solid var(--rule);border-radius:3px;
+  padding:16px 20px 6px;margin:0 0 14px}
+h2{font-family:Newsreader,Georgia,serif;font-weight:600;font-size:20px;line-height:1.25;
+  color:var(--ink);margin:0 0 10px;display:flex;gap:10px;align-items:baseline;text-wrap:balance}
+h2 span{font-family:"IBM Plex Sans",sans-serif;font-size:12px;font-weight:600;color:var(--muted);
+  background:#F3F3F8;border-radius:2px;padding:2px 7px;flex:none}
+section p{font-family:Newsreader,Georgia,serif;font-size:21px;line-height:1.4;font-weight:400;
+  color:var(--body);margin:0 0 12px;text-wrap:pretty}
+section p b{font-weight:700;color:var(--ink)}
+footer{margin-top:30px;padding-top:16px;border-top:1px solid var(--rule);font-size:14px;color:var(--muted)}
+footer a{color:var(--accent)}
+@media (max-width:560px){h1{font-size:29px} section p{font-size:19px}}
+</style></head><body><div class="wrap">
+<h1>The talk, in the words I said</h1>
+<p class="sub">Memory is a Retrieval Problem &middot; Haystack EU 2026 &middot;
+<a href="talk.html">the slides</a> &middot; <a href="haystack26.pdf">PDF</a></p>
+<section><h2><span>1</span>Agent Memory</h2><p>hi everyone! good to be at haystack again. it's been a few years, and I recognize a few <b>familiar faces</b>... and <b>many new ones</b>.</p></section>
+<section><h2><span>2</span>At least I remembered the interleaving tip.</h2><p>But I still have these <b>awkward moments</b> where I see a person, recognize them, remember the good tip they gave me on A/B testing or <b>interleaving</b>... but I <b>can't recall your name</b>. Was it Joseph? Antoine? Hans?</p><p>at least i remembered the advice on interleaving :D this is haystack after all, I love this conference because it's <b>pure knowledge going to my brain</b>, search experts people sharing their experience, without filters... my manager would rather I <b>remember the content and not the names</b> than the other way around :D</p></section>
+<section><h2><span>3</span>Remember <em>everything</em>?</h2><p>prefer vuejs for new repos not react</p><p>but it was for my vue hackathon weekend :facepalm:</p></section>
+<section><h2><span>4</span>This year I briefed my agents. Every. Single. Conversation.</h2><p>Like many of you, this year, I've spent <b>more time than ever</b> interacting with AI agents. at work, for personal stuff, or when fighting support to return a concert ticket... some of these i had to <b>brief in each conversation</b>, and that was <b>super tedious</b></p><p>remember when you had to <b>copy/paste code lines</b> to claude.ai/chat and back ? like, every new conv loading this in context? claude code and other, context-bringing agentic tools, make a <b>huge diff</b></p></section>
+<section><h2><span>5</span>The opposite is true too: bringing everything up is bad as well.</h2><p>but the opposite is true too.</p></section>
+<section><h2><span>6</span>Remembering nothing is bad.</h2><p>ahah it looks like <b>remembering nothing is bad</b>, <b>remembering everything is bad too</b>. The brain <b>forgets for a reason</b> 😅</p></section>
+<section><h2><span>7</span>False positives.</h2><p>so it looks like a situation with <b>False Positives</b> (things I brought up i should rather forget), and <b>False Negs</b> ('oh i def should have mentioned this :Facepalm:')... <b>seems familiar?</b> Does this <em>recall</em> other problems you've seen in the past?</p><p>I think i remember! It's a <b>F1 score</b>! It's a ✨ <b>retrieval problem</b> ✨</p></section>
+<section><h2><span>11</span>Agents are new. Retrieval under constraints is <em>our</em> turf.</h2><p>so thats great news, <b>Agent is a new world</b>, but <b>retrieval under cosntraints is our turf</b>! In this room, many of you have faced this situation before. "I have a latency budget, a response size budget, what can I cram in there to maximize metrics XYZ"</p></section>
+<section><h2><span>12</span>Budget 1: latency</h2><p>here the budget is <b>latency</b> (dont wanna slow already looooooong agent answers)</p></section>
+<section><h2><span>13</span>Budget 2: tokens 💸</h2><p>and <b>tokens</b> (who pays for that overfetch? 💸 )</p></section>
+<section><h2><span>14</span>Budget 3: attention</h2><p>and <em>attention</em> (needle-in-haystack tests demonstrate attention models <b>drop the nugget when too much noise</b>).</p><p>2025 <b>hard limit</b>, 2026 just <b>stupid expensive</b></p></section>
+<section><h2><span>21</span>You already have query → results.</h2><p>abd you already have systems to go from <b>query to result lists</b>!</p></section>
+<section><h2><span>23</span>① The query.</h2><p>query -&gt; how do we craft a <b>memory-retrieval query</b>?</p></section>
+<section><h2><span>24</span>Baseline: just the last N.</h2><p>what are baselines (the <b>prefetch last X memories</b> is surprisingly effective, especially paired with e.g. the closed and open topic modelling features)</p></section>
+<section><h2><span>25</span>One conversation. Five queries.</h2><p>we did not show enough query. here are <b>five, cheapest first</b>, and every one of them is <b>a thing you can measure</b></p></section>
+<section><h2><span>26</span>The query you wrote at write time.</h2><p>at memorize time you <b>already paid a model to think</b> about this fact. that is the <b>cheapest moment</b> to also ask: <b>what would someone type to find this?</b></p></section>
+<section><h2><span>27</span>…especially with topics.</h2><p>especially paired with e.g. the <b>closed and open topic modelling</b> features</p></section>
+<section><h2><span>28</span>② Retrieval.</h2><p>retrieval -&gt; what search settings? Facets? optional scoring? what keyword relevance, based on algolia's <b>ranking formula</b> approach, makes sense? do we consider rules? Synonyms? <b>the whole algolia relevance game</b></p></section>
+<section><h2><span>29</span>Same words: fine. Same <em>meaning</em>: not so much.</h2><p>same index, same records: <b>81%</b> when they reuse the memory's words, <b>9.5%</b> when they ask at intent level. the engine did not get worse. <b>the query did.</b></p></section>
+<section><h2><span>30</span>Three settings that moved recall.</h2><p>we swept <b>twelve</b> of the relevance settings you already tune. <b>three of them moved memory recall</b>. here they are — and <b>note the sign on the first one</b>.</p></section>
+<section><h2><span>31</span>③ Formatting.</h2><p>formatting -&gt; <b>which attributes to pass to the llm</b>? to index ? to be typotolerant in or not? <b>what format to return?</b></p></section>
+<section><h2><span>32</span>JSON? TOON? YAML? Markdown?</h2><p>pass JSON or TOON or CSV or MARKDOWN? (we plug here our <b>TOON research</b> and experiments, showing again, <b>memory too is a retrieval challenge</b> and can be approached as such)</p></section>
+<section><h2><span>39</span>Some players go pure vector. Sub-200 ms. Impressive!</h2><p>some players in the agentic memory game take a <b>purely vector semantic approach</b>, and do <b>sub-200ms prefetch-and-inject</b> before one-shot answer. thats super cool!</p></section>
+<section><h2><span>40</span>First: make it work on what you <em>already have</em>.</h2><p>here i wanted to 1. make it possible for <em>any search customers</em> to leverage on their <em>existing</em> implem. so these first steps were <b>pure algolia classic engine</b>.</p></section>
+<section><h2><span>41</span>Forgetting is retrieval too.</h2><p>i asked it, naively, to <b>tidy its own memory</b> — just compact it. <b>it dropped ninety percent.</b></p><p>Like Shakira, famous retrieval expert, said: <b>"I can't remember to forget you"</b>.</p></section>
+<section><h2><span>42</span>Your Turn: Measure It</h2><p>review <b>3-5 conversations</b> where memories were a part of. review <b>last 20 memories</b> of each user, <b>try a search or two yourself</b> — which memories retrieved, were irrelevant? which memories relevant, were not retrieved? rinse. repeat. climb that gradient until your fav retrieval metric is good. it can be the haystack-famous "CTO@5" :P (when your CTO looks at top five hits and comments)</p></section>
+<section><h2><span>43</span>Memory is <em>just</em> search.</h2><p><b>one click per screen</b> — the experiments, the dataset, what the judge saw, then <b>one case end to end</b>.</p></section>
+<footer>Only the spoken narrative is here, one block per slide. The measurements behind each
+claim are on the slides themselves.</footer>
+</div></body></html>
